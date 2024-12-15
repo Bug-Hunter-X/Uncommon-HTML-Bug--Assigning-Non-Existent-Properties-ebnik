@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+
+  <script>
+    // Incorrectly attempting to access a non-existent property of the element
+    let myDiv = document.getElementById("myDiv");
+    let myP = myDiv.querySelector("p");
+    myDiv.myNonExistentProperty = "hello"; //Trying to assign a property that doesn't exist on the div element.
+    console.log(myDiv.myNonExistentProperty); //This will cause issues in some browsers, potentially a silent failure or an error.
+    console.log(myP.textContent);
+  </script>
+</body>
+</html>
