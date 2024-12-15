@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+
+  <script>
+    let myDiv = document.getElementById("myDiv");
+    let myP = myDiv.querySelector("p");
+
+    // Correctly setting attributes instead of inventing new properties
+    myDiv.setAttribute("data-custom", "hello"); // Use data-* attributes for custom data
+    console.log(myDiv.getAttribute("data-custom")); // Access using getAttribute
+    console.log(myP.textContent);
+  </script>
+</body>
+</html>
